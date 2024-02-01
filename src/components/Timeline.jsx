@@ -87,7 +87,6 @@ export function TimeLine() {
         onScroll={(e) => {}}
         onMouseMove={(e) => {
           if (isDragging) {
-            // console.log(isDragging);
             playheadRef.current.style.left = `${e.clientX}px`;
           }
         }}
@@ -169,8 +168,4 @@ export function TimeLine() {
 
 function createElement(x1, y1, x2, y2, clip) {
   return { x1, y1, x2, y2, clip };
-}
-
-function getMouseCoords(x, y, panOffset, scale) {
-  return { x: (x - panOffset) * scale, y };
 }
