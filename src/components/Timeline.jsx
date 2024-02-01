@@ -62,14 +62,15 @@ export function TimeLine() {
 
   return (
     <>
-      <button onClick={() => setDrawClip("clip1")}>clip1</button>
-      <button onClick={() => setDrawClip("clip2")}>clip2</button>
-      <button onClick={() => setDrawClip("clip3")}>clip3</button>
-      <button onClick={() => setDrawClip("clip4")}>clip4</button>
-      <button onClick={() => setDrawClip("clip5")}>clip5</button>
-      <button onClick={() => setDrawClip(null)}>none</button>
-
-      <button onClick={() => setElements([])}>Reset</button>
+    <div className="ribbon">
+    <div className="clip-selector">
+        <button onClick={() => setDrawClip("clip1")}>clip1</button>
+        <button onClick={() => setDrawClip("clip2")}>clip2</button>
+        <button onClick={() => setDrawClip("clip3")}>clip3</button>
+        <button onClick={() => setDrawClip("clip4")}>clip4</button>
+        <button onClick={() => setDrawClip("clip5")}>clip5</button>
+        <button onClick={() => setDrawClip(null)}>none</button>
+      </div>
 
       <input
         type="range"
@@ -81,6 +82,11 @@ export function TimeLine() {
           setScale(e.target.value);
         }}
       ></input>
+    </div>
+
+      
+
+
       <div
         className="timeline"
         ref={containerRef}
@@ -162,6 +168,7 @@ export function TimeLine() {
           }}
         ></div>
       </div>
+      <button onClick={() => setElements([])}>Reset</button>
     </>
   );
 }
